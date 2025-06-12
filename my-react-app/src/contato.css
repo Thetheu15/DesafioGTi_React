@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+.container_principal_contato {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    padding: 50px 20px;
+    background-color: #333333;
+    margin: 0 auto;
+    min-height: auto;
+    margin-top: 0;
+}
+
+.titulo_contato {
+    font-size: 2.5rem;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.informacoes {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.informacoes_left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-grow: 1;
+    min-width: 280px;
+    max-width: 400px;
+}
+
+.input_left {
+    height: 50px;
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #666666;
+    background-color: white;
+    color: black;
+    font-size: 1rem;
+    font-family: sans-serif;
+}
+
+.input_left::placeholder {
+    color: #666666;
+}
+
+.informacoes_right {
+    display: flex;
+    flex-grow: 1;
+    min-width: 280px;
+    max-width: 400px;
+}
+
+.mensagem {
+    height: 170px;
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #666666;
+    background-color: white;
+    color: black;
+    font-size: 1rem;
+    font-family: sans-serif;
+    resize: vertical;
+}
+
+.mensagem::placeholder {
+    color: #666666;
+}
+
+.container_botao {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.botao {
+    height: 50px;
+    width: 180px;
+    border-radius: 10px;
+    background-color: #FFDE00;
+    color: #333333;
+    border: none;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.botao:hover {
+    background-color: #FFEB3B;
+}
