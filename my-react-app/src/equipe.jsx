@@ -25,7 +25,7 @@ class Equipe extends Component {
                         </div>
                         <div className="descricao_equipe">
                             Ms. Anya Sharma, nossa visionária do Game Design, transforma conceitos criativos em mecânicas envolventes.
-                            <div class = "icones_redes_socias_equipe">
+                            <div className = "icones_redes_socias_equipe">
                             <FontAwesomeIcon icon={faLinkedinIn} />
                             <FontAwesomeIcon icon={faInstagram} />
                             </div>
@@ -38,7 +38,7 @@ class Equipe extends Component {
                         </div>
                         <div className="descricao_equipe">
                             Mr. Kenji Ito, nosso especialista em Modelagem 3D, ensina a esculpir personagens e cenários impressionantes.
-                            <div class = "icones_redes_socias_equipe">
+                            <div className = "icones_redes_socias_equipe">
                             <FontAwesomeIcon icon={faLinkedinIn} />
                             <FontAwesomeIcon icon={faInstagram} />
                             </div>
@@ -53,7 +53,7 @@ class Equipe extends Component {
                             <p>
                                 Mr. David Lee é o arquiteto de histórias e universos, guiando na criação de narrativas ricas.
                              </p>
-                            <div class = "icones_redes_socias_equipe">
+                            <div className = "icones_redes_socias_equipe">
                             <FontAwesomeIcon icon={faLinkedinIn} />
                             <FontAwesomeIcon icon={faInstagram} />
                             </div>
@@ -69,7 +69,7 @@ class Equipe extends Component {
                             <p>
                                 Mr. Femi Adebayo, mestre da lógica e códigos, desmistifica algoritmos complexos. Ele te guiará para transformar linhas de código em pura magia interativa.
                             </p>
-                            <div class = "icones_redes_socias_equipe">
+                            <div className = "icones_redes_socias_equipe">
                             <FontAwesomeIcon icon={faLinkedinIn} />
                             <FontAwesomeIcon icon={faInstagram} />
                             </div>

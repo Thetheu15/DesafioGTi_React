@@ -8,7 +8,7 @@ class Projetos extends Component {
   render() {
     return (
       <React.Fragment>
-            <p class = "titulo">
+            <p className = "titulo">
                 Um pouco do que os nossos alunos já fizeram! 
             </p>
         <div className="container_jogos">

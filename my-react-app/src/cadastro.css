@@ -1,0 +1,138 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Evita barras de rolagem no corpo principal */
+}
+
+.cadastro-page {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('./assets/Gemini_Generated_Image_x5y5ntx5y5ntx5y5.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative; /* Para o overlay */
+    color: white; /* Cor do texto padrão para contraste */
+}
+
+.cadastro-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* Overlay escuro para melhorar a legibilidade */
+    z-index: 1;
+}
+
+.cadastro-container {
+    background-color: rgba(30, 30, 45, 0.9); /* Fundo escuro semitransparente, inspirado em interfaces de jogos */
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    max-width: 450px;
+    width: 90%;
+    z-index: 2; /* Acima do overlay */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaçamento entre os elementos */
+}
+
+.cadastro-title {
+    font-family: 'Orbitron', sans-serif; /* Mantendo a fonte de impacto */
+    color: white; /* Verde neon para destaque, como em UI de jogos */
+    font-size: 2.2em;
+    margin-bottom: 25px;
+    text-shadow: 0 0 8px white;
+}
+
+.cadastro-input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha labels à esquerda */
+    width: 100%;
+}
+
+.cadastro-label {
+    font-size: 0.9em;
+    color: #bbb;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.cadastro-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid white; /* Borda com a cor de destaque */
+    border-radius: 8px;
+    background-color: rgba(50, 50, 70, 0.7); /* Fundo do input escuro e levemente transparente */
+    color: white;
+    font-size: 1em;
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box; /* Inclui padding e borda no width total */
+}
+
+.cadastro-input::placeholder {
+    color: #999;
+}
+
+.cadastro-input:focus {
+    border-color: #00ff99; /* Borda mais clara no foco */
+    box-shadow: 0 0 10px white;
+}
+
+.cadastro-button {
+    background-color: white; /* Verde neon */
+    color: #1a1a2e; /* Cor escura para contraste no botão */
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.cadastro-button:hover {
+    background-color:  white; /* Verde mais claro ao passar o mouse */
+    transform: translateY(-2px); /* Efeito sutil de elevação */
+}
+
+.cadastro-link {
+    color: white;
+    text-decoration: none;
+    font-size: 0.95em;
+    margin-top: 15px;
+    transition: color 0.3s ease;
+}
+
+.cadastro-link:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 600px) {
+    .cadastro-container {
+        padding: 25px;
+    }
+    .cadastro-title {
+        font-size: 1.8em;
+    }
+    .cadastro-input {
+        padding: 10px 12px;
+        font-size: 0.9em;
+    }
+    .cadastro-button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+}
