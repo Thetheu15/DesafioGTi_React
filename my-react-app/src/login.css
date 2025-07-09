@@ -1,7 +1,8 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    overflow: hidden; /* Mantido para que o fundo ocupe 100vh/100vw e não haja scroll no body */
+    overflow-x: hidden; 
+    overflow-y: auto;
 }
 
 .container_principal_login {

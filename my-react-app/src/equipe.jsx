@@ -5,9 +5,7 @@ import imagemKenji from "./assets/67fd2a40512277a04662dd4f_Design sem nome (40).
 import imagemDavid from "./assets/download (1).jpg";
 import imagemFemi from "./assets/portrait-3157821_640.jpg";
 
-// Importe o componente FontAwesomeIcon
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// Importe os ícones específicos que você vai usar do pacote de marcas
 import { faLinkedinIn, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 

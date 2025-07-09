@@ -1,4 +1,3 @@
-// src/MinhaConta.jsx
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './minhaconta.css';
@@ -21,10 +20,9 @@ function MinhaConta() {
 
     const navigate = useNavigate();
 
-    // --- CORREÇÃO AQUI: Aponte para a porta 3000 do seu backend ---
-    const BACKEND_URL = 'http://localhost:8080'; // <-- Mude de 8080 para 3000
-    const USER_ME_ENDPOINT = '/users/me'; // <-- Confirme este endpoint
-    const CHANGE_PASSWORD_ENDPOINT = '/users/me/password'; // <-- Confirme este endpoint
+    const BACKEND_URL = 'http://localhost:8080';
+    const USER_ME_ENDPOINT = '/users/me';
+    const CHANGE_PASSWORD_ENDPOINT = '/users/me/password';
 
     useEffect(() => {
         const fetchUserData = async () => {
@@ -59,8 +57,8 @@ function MinhaConta() {
                     const errorData = await response.json();
                     setMessage({ type: 'error', text: errorData.message || 'Erro ao carregar dados do usuário.' });
                     if (response.status === 401 || response.status === 403) {
-                         localStorage.removeItem('authToken');
-                         navigate('/login');
+                        localStorage.removeItem('authToken');
+                        navigate('/login');
                     }
                 }
             } catch (error) {
@@ -127,7 +125,9 @@ function MinhaConta() {
                 return;
             }
 
-            const { dataEntrada, cursosConcluidos, cursosEmProgresso, ...dataToUpdate } = userData;
+            const { dataEntrada, cursosConcluidos, cursosEmProgresso, ...rest } = userData;
+            const { nome, ...outros } = rest;
+            const dataToUpdate = { name: nome, ...outros };
 
             const response = await fetch(`${BACKEND_URL}${USER_ME_ENDPOINT}`, {
                 method: 'PUT',
@@ -144,9 +144,9 @@ function MinhaConta() {
             } else {
                 const errorData = await response.json();
                 setMessage({ type: 'error', text: errorData.message || 'Erro ao atualizar informações.' });
-                 if (response.status === 401 || response.status === 403) {
-                     localStorage.removeItem('authToken');
-                     navigate('/login');
+                if (response.status === 401 || response.status === 403) {
+                    localStorage.removeItem('authToken');
+                    navigate('/login');
                 }
             }
         } catch (error) {
@@ -183,9 +183,9 @@ function MinhaConta() {
             } else {
                 const errorData = await response.json();
                 setMessage({ type: 'error', text: errorData.message || 'Erro ao alterar senha.' });
-                 if (response.status === 401 || response.status === 403) {
-                     localStorage.removeItem('authToken');
-                     navigate('/login');
+                if (response.status === 401 || response.status === 403) {
+                    localStorage.removeItem('authToken');
+                    navigate('/login');
                 }
             }
         } catch (error) {
@@ -203,6 +203,7 @@ function MinhaConta() {
         <div className='minha-conta-page'>
             <div className='minha-conta-container'>
                 <h1 className='minha-conta-title'>Minha Conta</h1>
+                    <button className='btn-conta voltar-home' onClick={() => navigate('/')}>Voltar para Home</button>
 
                 {message && (
                     <div className={`message ${message.type}`}>
@@ -285,7 +286,7 @@ function MinhaConta() {
                     <h2 className='section-title'>Cursos</h2>
                     <div className='input-group'>
                         <label className='label-conta'>Cursos em Progresso:</label>
-                        {userData.cursosEmProgresso && userData.cursosEmProgresso.length > 0 ? (
+                        {userData.cursosEmProgresso.length > 0 ? (
                             <ul className='course-list'>
                                 {userData.cursosEmProgresso.map((curso, index) => (
                                     <li key={index} className='course-item'>
@@ -299,7 +300,7 @@ function MinhaConta() {
                     </div>
                     <div className='input-group'>
                         <label className='label-conta'>Cursos Concluídos:</label>
-                        {userData.cursosConcluidos && userData.cursosConcluidos.length > 0 ? (
+                        {userData.cursosConcluidos.length > 0 ? (
                             <ul className='course-list'>
                                 {userData.cursosConcluidos.map((curso, index) => (
                                     <li key={index} className='course-item'>

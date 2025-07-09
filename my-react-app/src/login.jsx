@@ -1,9 +1,9 @@
-// src/Login.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './login.css';
 
 function Login() {
+    
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState(null);
@@ -24,9 +24,8 @@ function Login() {
         setMessage(null);
         setIsLoading(true);
 
-        // --- CORREÇÃO AQUI: Aponte para a porta 3000 do seu backend ---
-        const BACKEND_URL = 'http://localhost:8080'; // <-- Mude de 8080 para 3000
-        const LOGIN_ENDPOINT = '/auth/login'; // <-- Confirme este endpoint (você usa '/auth' para authRoutes)
+        const BACKEND_URL = 'http://localhost:8080';
+        const LOGIN_ENDPOINT = '/auth/login';
 
         try {
             const response = await fetch(`${BACKEND_URL}${LOGIN_ENDPOINT}`, {
@@ -34,7 +33,8 @@ function Login() {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ username, password }),
+                
+                body: JSON.stringify({ email: username, password })
             });
 
             const data = await response.json();

@@ -1,8 +1,6 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    /* Remover overflow: hidden aqui para permitir rolagem se o body for o scroll principal */
-    /* overflow-x: hidden;  Remover se for o caso */
 }
 
 .minha-conta-page {
@@ -11,7 +9,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('./assets/Gemini_Generated_Image_x5y5ntx5y5ntx5y5.png'); /* Mesma imagem de fundo para consistência */
+    background-image: url('./assets/Gemini_Generated_Image_x5y5ntx5y5ntx5y5.png'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -19,11 +17,14 @@ body {
     color: white;
     padding: 20px;
     box-sizing: border-box;
-
-    /* Adicionar overflow-y: auto; se este for o elemento que deve rolar. */
-    /* Mas, geralmente, o container interno é melhor para rolar */
-    /* overflow-y: auto; */
 }
+
+.voltar-home {
+    margin-bottom: 1rem;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
 
 .minha-conta-page::before {
     content: '';
@@ -50,30 +51,26 @@ body {
     gap: 20px;
     box-sizing: border-box;
 
-    /* === AQUI ESTÁ O AJUSTE PRINCIPAL === */
-    /* Permite que o conteúdo dentro do container role se exceder a altura */
-    max-height: 90vh; /* Limita a altura do container a uma % do viewport */
-    overflow-y: auto; /* Adiciona barra de rolagem vertical se o conteúdo for maior que max-height */
-    /* Opcional: Adicionar um pouco de padding no scrollbar para não colar no texto */
-    padding-right: 15px; /* Ajusta conforme a largura da sua barra de rolagem */
+    
+    max-height: 90vh; 
+    overflow-y: auto; 
+    padding-right: 15px; 
 
-    /* Estilo da barra de rolagem (WebKit - Chrome, Safari) */
     &::-webkit-scrollbar {
         width: 8px;
     }
     &::-webkit-scrollbar-track {
-        background: rgba(50, 50, 70, 0.7); /* Cor da trilha da barra de rolagem */
+        background: rgba(50, 50, 70, 0.7);
         border-radius: 10px;
     }
     &::-webkit-scrollbar-thumb {
-        background-color: rgba(255, 255, 255, 0.5); /* Cor do "polegar" da barra de rolagem */
+        background-color: rgba(255, 255, 255, 0.5); 
         border-radius: 10px;
-        border: 2px solid rgba(30, 30, 45, 0.9); /* Cor da borda do polegar */
+        border: 2px solid rgba(30, 30, 45, 0.9); 
     }
 }
 
 
-/* O restante do seu CSS permanece o mesmo */
 .minha-conta-title {
     font-family: 'Orbitron', sans-serif;
     color: white;
@@ -187,11 +184,10 @@ body {
     color: white;
 }
 
-/* Media Queries para responsividade */
 @media (max-width: 768px) {
     .minha-conta-container {
         padding: 30px;
-        max-height: 85vh; /* Ajuste a altura máxima para telas menores */
+        max-height: 85vh; 
     }
     .minha-conta-title {
         font-size: 1.8em;
@@ -212,7 +208,7 @@ body {
 @media (max-width: 480px) {
     .minha-conta-container {
         padding: 20px;
-        max-height: 80vh; /* Ajuste ainda mais para celulares */
+        max-height: 80vh; 
     }
     .minha-conta-title {
         font-size: 1.5em;
@@ -220,15 +216,15 @@ body {
 }
 
 .course-list {
-    list-style: none; /* Remove os marcadores de lista padrão */
+    list-style: none; 
     padding: 0;
     margin: 0;
     width: 100%;
-    background-color: rgba(50, 50, 70, 0.7); /* Fundo similar ao input */
+    background-color: rgba(50, 50, 70, 0.7); 
     border-radius: 8px;
     border: 1px solid white;
-    max-height: 150px; /* Limita a altura da lista para evitar que cresça demais */
-    overflow-y: auto; /* Adiciona scroll se a lista for muito longa */
+    max-height: 150px; 
+    overflow-y: auto; 
 }
 
 .course-list::-webkit-scrollbar {
@@ -245,14 +241,14 @@ body {
 
 .course-item {
     padding: 10px 15px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Linha divisória suave */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
     color: white;
     font-size: 0.95em;
     text-align: left;
 }
 
 .course-item:last-child {
-    border-bottom: none; /* Remove a borda do último item */
+    border-bottom: none; 
 }
 
 .no-courses-message {

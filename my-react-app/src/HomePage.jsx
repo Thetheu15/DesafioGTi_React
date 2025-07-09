@@ -7,6 +7,7 @@ import Equipe from "./equipe.jsx";
 import Apoiadores from "./apoiadores.jsx";
 import Contato from "./contato.jsx";
 import Footer from "./footer.jsx"; 
+import "./home.css"
 
 function HomePage() {
   return (
