@@ -1,13 +1,12 @@
 const { PrismaClient } = require('@prisma/client');
 const bcrypt = require('bcryptjs');
 
-const prisma = new PrismaClient(); // Instancie o PrismaClient aqui
+const prisma = new PrismaClient();
 
-// Obter dados do próprio usuário logado
 exports.getMe = async (req, res) => {
   try {
     const user = await prisma.user.findUnique({
-      where: { id: req.user.userId }, // req.user vem do authMiddleware
+      where: { id: req.user.userId }, 
       select: { id: true, name: true, email: true, bio: true, dataEntrada: true, cursosConcluidos: true, cursosEmProgresso: true }
     });
     if (!user) {
@@ -59,10 +58,10 @@ exports.changePassword = async (req, res) => {
       return res.status(400).json({ message: 'Senha atual inválida.' });
     }
 
-    // 3. Hash da nova senha
+  
     const hashedNewPassword = await bcrypt.hash(newPassword, 10);
 
-    // 4. Atualizar senha no DB
+
     await prisma.user.update({
       where: { id: req.user.userId },
       data: { password: hashedNewPassword },
@@ -75,7 +74,7 @@ exports.changePassword = async (req, res) => {
   }
 };
 
-// Rotas de CRUD gerais (se necessário para admin, etc.)
+// Rotas de CRUD gerais
 // exports.getAllUsers = async (req, res) => { /* ... */ };
 // exports.getUserById = async (req, res) => { /* ... */ };
 // exports.updateUser = async (req, res) => { /* ... */ };

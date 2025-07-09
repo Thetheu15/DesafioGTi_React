@@ -1,14 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const userController = require('../controllers/userController');
-const authMiddleware = require('../middleware/authMiddleware'); // Importe o middleware
+const authMiddleware = require('../middleware/authMiddleware');
 
-// Todas estas rotas exigirão autenticação
 router.get('/me', authMiddleware, userController.getMe);
 router.put('/me', authMiddleware, userController.updateMe);
 router.put('/me/password', authMiddleware, userController.changePassword);
 
-// Rotas de CRUD gerais (se aplicável, e podem exigir middleware de admin)
+// Rotas de CRUD gerais
 // router.get('/', authMiddleware, userController.getAllUsers);
 // router.get('/:id', authMiddleware, userController.getUserById);
 // router.put('/:id', authMiddleware, userController.updateUser);
