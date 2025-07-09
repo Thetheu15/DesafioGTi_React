@@ -13,7 +13,7 @@ function Cadastro() {
 
     const navigate = useNavigate();
 
-    const BACKEND_URL = 'http://localhost:8080'; 
+    const BACKEND_URL = 'https://gameforge-backend.onrender.com'; 
     const REGISTER_ENDPOINT = '/auth/register'; 
 
     const handleRegisterSubmit = async (e) => {
