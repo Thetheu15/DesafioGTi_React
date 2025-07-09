@@ -102,8 +102,8 @@ body {
 }
 
 .texto_apresentacao p {
-    margin-bottom: 10px;
-    font-size: 20px;
+    margin-bottom: 15px;
+    line-height: 1.6;
 }
 
 .hamburger {
@@ -199,29 +199,32 @@ body {
 @media (max-width: 768px) {
   .texto_apresentacao {
     width: 90%;
-    font-size: 16px;
     padding-left: 15px;
-    padding-top: 30px;
-    margin-top: 20px;
-  }
-
-  .texto_apresentacao p {
-    font-size: 16px;
-    line-height: 1.4;
-  }
-}
-
-@media (max-width: 480px) {
-  .texto_apresentacao {
-    width: 95%;
-    font-size: 14px;
-    padding-left: 10px;
+    padding-right: 15px;
     padding-top: 20px;
     margin-top: 10px;
   }
 
   .texto_apresentacao p {
+    font-size: 16px;
+    margin-bottom: 18px;
+    line-height: 1.7;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .texto_apresentacao {
+    width: 95%;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+  }
+
+  .texto_apresentacao p {
     font-size: 14px;
-    line-height: 1.3;
+    margin-bottom: 20px;
+    line-height: 1.8;
   }
 }
