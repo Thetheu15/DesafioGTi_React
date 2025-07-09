@@ -24,7 +24,7 @@ function Login() {
         setMessage(null);
         setIsLoading(true);
 
-        const BACKEND_URL = 'http://localhost:8080';
+        const BACKEND_URL = 'https://gameforge-backend.onrender.com';
         const LOGIN_ENDPOINT = '/auth/login';
 
         try {
