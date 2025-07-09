@@ -181,3 +181,47 @@ body {
     box-shadow: 0 4px 15px rgba(0,0,0,0.7);
   }
 }
+
+@media (max-width: 1024px) {
+  .texto_apresentacao {
+    width: 80%;
+    font-size: 18px;
+    padding-left: 20px;
+    padding-top: 40px;
+    margin-top: 30px;
+  }
+
+  .texto_apresentacao p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .texto_apresentacao {
+    width: 90%;
+    font-size: 16px;
+    padding-left: 15px;
+    padding-top: 30px;
+    margin-top: 20px;
+  }
+
+  .texto_apresentacao p {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 480px) {
+  .texto_apresentacao {
+    width: 95%;
+    font-size: 14px;
+    padding-left: 10px;
+    padding-top: 20px;
+    margin-top: 10px;
+  }
+
+  .texto_apresentacao p {
+    font-size: 14px;
+    line-height: 1.3;
+  }
+}

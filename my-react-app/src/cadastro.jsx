@@ -13,9 +13,8 @@ function Cadastro() {
 
     const navigate = useNavigate();
 
-    // --- CORREÇÃO AQUI: Aponte para a porta 3000 do seu backend ---
-    const BACKEND_URL = 'http://localhost:8080'; // <-- Mude de 8080 para 3000
-    const REGISTER_ENDPOINT = '/auth/register'; // <-- Confirme este endpoint (você usa '/auth' para authRoutes)
+    const BACKEND_URL = 'http://localhost:8080'; 
+    const REGISTER_ENDPOINT = '/auth/register'; 
 
     const handleRegisterSubmit = async (e) => {
         e.preventDefault();
